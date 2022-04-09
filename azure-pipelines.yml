@@ -36,9 +36,7 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        cd client
-        npm install
-        cd ..
+        npm run install-client
         npm install
       displayName: 'npm install, build and test'
 
