@@ -21,7 +21,8 @@ const io = new socket_io_1.Server(server);
 app.use(express_1.default.json()); //Body parser
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)({
-    origin: "http://localhost:3000",
+//  origin: "http://localhost:3000",
+    origin: "http://0.0.0.0", // use 0.0.0.0
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));

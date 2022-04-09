@@ -23,9 +23,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd server
-          npm install
-          cd ../client
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -55,5 +52,5 @@ jobs:
         with:
           app-name: 'memorya'
           slot-name: 'devtest'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F41486D689449808847A0CE4B6A8F1B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8C406A3BBFF4D72AC8A13AEB9B6A33E }}
           package: .
