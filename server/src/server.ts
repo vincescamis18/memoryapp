@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express";
 import mongoose from "mongoose";
 import { Server } from "socket.io";
@@ -37,9 +38,12 @@ mongoose
 	.then(() => console.log("[S:01] Database Connected"))
 	.catch((err: any) => console.log(err));
 
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("../../client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+// 	app.use(express.static("../../client/build"));
+// }
+
+// Temporarily remove the checking for prod env
+app.use(express.static("../../client/build"));
 
 // passport setup
 require("./passport");
@@ -135,6 +139,11 @@ io.on("connection", (socket: any) => {
 			console.log(""); // Config: white seperator
 		}
 	});
+});
+
+// Get the index file of the client-side build
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "..", "..", "client", "build", "index.html"));
 });
 
 // Deploying server to available port
