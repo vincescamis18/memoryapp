@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'memorya'
           slot-name: 'devtest'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8C406A3BBFF4D72AC8A13AEB9B6A33E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DE3DFBA968444EC5A5981D0DFA402E7D }}
           package: .
